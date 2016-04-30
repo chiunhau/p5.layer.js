@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../lib/p5.js"></script>
+	<script src="../lib/p5.collide2d.js"></script>
+	<script src="../p5.layer.js"></script>
+	<script>
+		function setup() {
+			createCanvas(800, 600);
+			fill('#f00');
+			noStroke();
+		}
+		
+		var xPos = 400;
+		function draw() {
+			clear();
+			ellipse(xPos, 300, 50, 50);
+			xPos += 1;
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

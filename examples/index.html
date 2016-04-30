@@ -4,20 +4,28 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script src="../lib/p5.js"></script>
-	<script src="p5.layer.js"></script>
+	<script src="../lib/p5.collide2d.js"></script>
+	<script src="../p5.layer.js"></script>
 	<script>
 		function setup() {
 			createCanvas(800, 600);
+			fill('#f00');
+			noStroke();
 			enableLayer();
 		}
 
 		function draw() {
-			fill('#f00');
-			ellipseLayer(400, 300, 50, 50, 'myEllipse');
+			clear();
+			ellipseLayer(400, 300, 50, 50, 'myCircle');
+			layer('myCircle').x += 1;
+		}
+
+		function mouseClicked() {
+	
 		}
 	</script>
 </head>
 <body>
-	
+
 </body>
 </html>
