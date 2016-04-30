@@ -8,17 +8,31 @@
 	<script src="../p5.layer.js"></script>
 	<script>
 		function setup() {
-			createCanvas(800, 600);
-			fill('#f00');
-			noStroke();
+			createCanvas(500, 500);
 		}
-		
-		var xPos = 400;
+
 		function draw() {
 			clear();
-			ellipse(xPos, 300, 50, 50);
-			xPos += 1;
+			ellipse1.draw();
 		}
+
+		function mouseClicked() {
+			ellipse1.w += 10;
+			ellipse1.h += 10;
+		}
+
+
+		var MyEllipse = function(x, y, w, h) {
+			this.x = x;
+			this.y = y;
+			this.w = w;
+			this.h = h;
+			this.draw = function() {
+				ellipse(this.x, this.y, this.w, this.h);
+			}
+		}
+
+		var ellipse1 = new MyEllipse(100, 100, 50, 50);
 
 	</script>
 </head>

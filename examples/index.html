@@ -8,20 +8,18 @@
 	<script src="../p5.layer.js"></script>
 	<script>
 		function setup() {
-			createCanvas(800, 600);
-			fill('#f00');
-			noStroke();
-			enableLayer();
+			createCanvas(500, 500);
+			enableLayer()
 		}
 
 		function draw() {
 			clear();
-			ellipseLayer(400, 300, 50, 50, 'myCircle');
-			layer('myCircle').x += 1;
+			ellipseLayer(100, 100, 50, 50, 'ellipse1');
 		}
 
 		function mouseClicked() {
-	
+			layer('ellipse1').w += 10;
+			layer('ellipse1').h += 10;
 		}
 	</script>
 </head>

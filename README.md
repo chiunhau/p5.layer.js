@@ -10,8 +10,10 @@
 ```
 
 ### Example
-With p5.layer
+
 ```js
+//With p5.layer
+
 function setup() {
 	createCanvas(500, 500);
 	enableLayer()
@@ -19,30 +21,42 @@ function setup() {
 
 function draw() {
 	clear();
-	ellipseLayer(100, 100, 50, 50, 'myEllipse');
+	ellipseLayer(100, 100, 50, 50, 'ellipse1');
 }
 
 function mouseClicked() {
-	layer('myEllipse').x += 10;
+	layer('ellipse1').w += 10;
+	layer('ellipse1').h += 10;
 }
 
 ```
-
-Without p5.layer
 ```js
+//Without p5.layer
+
 function setup() {
 	createCanvas(500, 500);
 }
 
-var xPos = 100
-
 function draw() {
 	clear();
-	ellipse(xPos, 100, 50, 50);
+	ellipse1.draw();
 }
 
 function mouseClicked() {
-	xPos += 10;
+	ellipse1.w += 10;
+	ellipse1.h += 10;
 }
 
+
+var MyEllipse = function(x, y, w, h) {
+	this.x = x;
+	this.y = y;
+	this.w = w;
+	this.h = h;
+	this.draw = function() {
+		ellipse(this.x, this.y, this.w, this.h);
+	}
+}
+
+var ellipse1 = new MyEllipse(100, 100, 50, 50);
 ```
